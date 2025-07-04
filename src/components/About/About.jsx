@@ -56,7 +56,7 @@ function About() {
         {/* right side - Image */}
         <div className='md:w-1/2 flex justify-center mb-8 md:mb-0'>
           <Tilt
-              className='w-120 h-120 md:w-150 md:h-150 rounded-full flex items-center justify-center'
+              className='w-120 h-120 md:w-150 md:h-150 rounded-full flex items-center border-[#898AC4] border-spacing-4 border-4 justify-center'
               tiltMaxAngleX={20}
               tiltMaxAngleY={20}
               perspective={1000}
