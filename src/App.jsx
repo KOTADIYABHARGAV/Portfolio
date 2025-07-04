@@ -21,7 +21,7 @@ export default function App() {
           <Skills />
           <Education />
           <Experience />
-          <Work/>
+          <Work />
           <Contact />
           <Footer />
         </div>

@@ -1,5 +1,5 @@
 import React from 'react'
-import { FaGithub, FaInstagram, FaFacebook, FaYoutube, FaLinkedin } from "react-icons/fa"
+import { FaGithub, FaInstagram, FaFacebook, FaYoutube, FaLinkedin } from "react-icons/fa";
 function Footer() {
   const handleScroll = (sectionId) => {
     const section = document.getElementById(sectionId);
@@ -35,20 +35,23 @@ function Footer() {
             { icon: <FaFacebook />, link: "https://www.facebook.com/bhargav.kotadiya.754" },
             { icon: <FaInstagram />, link: "https://www.instagram.com/b_kotadiya_/" },
             { icon: <FaYoutube />, link: "https://www.youtube.com/@bhargavkotadiya8672" },
-            { icon: <FaLinkedin />, link: "https://www.linkedin.com/in/bhargav-kotadiya/" }
+            { icon: <FaLinkedin />, link: "https://www.linkedin.com/in/bhargav-kotadiya/" },
           ].map((item, index) => {
             <a
               key={index}
+              href={item.link}
               target='_blank'
-              rel='noopener noreferrer'
-              className='text-xl hover:text-purple-500 transition-transform transform hover-scale-110'
-              href={item.link}>{item.icon}</a>
+              rel="noopener noreferrer"
+              className='text-xl hover:text-purple-500 transition-transform transform hover:scale-110'>
+              {item.icon}
+            </a>
           })}
         </div>
+
         {/* Copyright */}
 
         <p className='text-sm text-gray-400 mt-6'>
-          @Copyright reserved by b_kotadiya_
+          &#169; Copyright reserved by b_kotadiya_
         </p>
       </div>
 
