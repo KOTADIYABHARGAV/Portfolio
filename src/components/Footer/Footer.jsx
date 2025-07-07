@@ -41,7 +41,7 @@ function Footer() {
               key={index}
               target='_blank'
               rel='noopener noreferrer'
-              className='text-xl hover:text-purple-500 transition-transform transform hover-scale-110'
+              className='text-xl hover:text-purple-500 border border-purple-500 transition-transform transform hover-scale-110'
               href={item.link}>{item.icon}</a>
           })}
         </div>
