@@ -88,14 +88,14 @@ function Navbar() {
               </li>
             ))}
             <div className="flex space-x-4">
-              <a href="#"
+              <a href="https://github.com/KOTADIYABHARGAV"
                 className="text-gray-300 hover:text-white transition duration-300"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 <FaGithub size={24} />
               </a>
-              <a href="#"
+              <a href="https://www.linkedin.com/in/bhargav-kotadiya/"
                 className="text-gray-300 hover:text-white transition duration-300"
                 target="_blank"
                 rel="noopener noreferrer"
