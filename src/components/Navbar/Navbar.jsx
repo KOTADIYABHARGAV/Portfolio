@@ -36,7 +36,7 @@ function Navbar() {
   ];
 
   return (
-    <nav className={`fixed top-0 w-full z-50 transition duration-300 px-4 sm:px-6 md:px-10 lg:px-[15vw] xl:px-[20vw] ${isScrolled ? 'bg-[#050414] bg-opacity-80 backdrop-blur-md' : 'bg-transparent'}`}>
+    <nav className={`fixed top-0 w-full z-50 transition backdrop-blur-md duration-300 px-4 sm:px-6 md:px-10 lg:px-[15vw] xl:px-[20vw] ${isScrolled ? 'bg-[#050414] bg-opacity-80 backdrop-blur-xl' : 'bg-transparent'}`}>
       <div className="flex items-center justify-between py-4 text-white">
         {/* Logo */}
         <motion.div

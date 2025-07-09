@@ -42,8 +42,8 @@ function Footer() {
           ))}
         </nav>
 
-        {/* Social media icons */}
-        <div className="flex flex-wrap justify-between space-x-4 mt-6">
+        {/* Social media icons */}  
+        <div className="flex flex-wrap justify-center space-x-4 mt-6">
           {[
             { icon: <FaGithub />, link: "https://github.com/KOTADIYABHARGAV" },
             { icon: <FaFacebook />, link: "https://www.facebook.com/bhargav.kotadiya.754" },
