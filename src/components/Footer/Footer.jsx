@@ -42,8 +42,8 @@ function Footer() {
           ))}
         </nav>
 
-        {/* Social Media Icons */}
-        <div className="flex flex-wrap justify-center items-center gap-4 mt-6">
+        {/* Social media icons */}
+        <div className="flex flex-wrap justify-between space-x-4 mt-6">
           {[
             { icon: <FaGithub />, link: "https://github.com/KOTADIYABHARGAV" },
             { icon: <FaFacebook />, link: "https://www.facebook.com/bhargav.kotadiya.754" },
@@ -55,13 +55,10 @@ function Footer() {
               key={index}
               href={item.link}
               target='_blank'
-              rel="noopener noreferrer"
-              aria-label={`Visit my ${item.link.split('.')[1]} profile`}
-              className='text-xl hover:text-purple-500 transition-transform transform hover:scale-110'
-            >
-              {item.icon}
-            </a>
-          ))}
+              rel='noopener noreferrer'
+              className='text-xl hover:text-purple-500 transition-transform transform hover-scale-110'
+              href={item.link}>{item.icon}</a>
+          })}
         </div>
 
         {/* Copyright */}

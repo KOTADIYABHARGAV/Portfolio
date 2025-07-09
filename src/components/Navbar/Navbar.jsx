@@ -10,8 +10,8 @@ function Navbar() {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
-    };
+      setIsScrolled(scrollPosition > 50);
+    }
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
@@ -105,12 +105,20 @@ function Navbar() {
                 <button onClick={() => handleMenuItemClick(item.id)}>{item.label}</button>
               </li>
             ))}
-            <div className="flex gap-4 pt-2">
-              <a href="https://github.com/KOTADIYABHARGAV" target="_blank" rel="noopener noreferrer" className="hover:text-white text-gray-300">
-                <FaGithub size={22} />
+            <div className="flex space-x-4">
+              <a href="#"
+                className="text-gray-300 hover:text-white transition duration-300"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FaGithub size={24} />
               </a>
-              <a href="https://www.linkedin.com/in/bhargav-kotadiya/" target="_blank" rel="noopener noreferrer" className="hover:text-white text-gray-300">
-                <FaLinkedin size={22} />
+              <a href="#"
+                className="text-gray-300 hover:text-white transition duration-300"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FaLinkedin size={24} />
               </a>
             </div>
           </ul>
@@ -119,5 +127,4 @@ function Navbar() {
     </nav>
   );
 }
-
-export default Navbar;
+export default Navbar; 
