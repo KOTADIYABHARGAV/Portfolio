@@ -1,29 +1,31 @@
-import React, { useEffect } from 'react'
-import { FiMenu, FiX } from 'react-icons/fi'
-import { FaGithub, FaLinkedin } from 'react-icons/fa'
-import { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import { FiMenu, FiX } from 'react-icons/fi';
+import { motion } from 'framer-motion';
+import { FaGithub, FaLinkedin } from 'react-icons/fa';
+
 function Navbar() {
-  const [activeSection, setActiveSection] = useState("");
-  const [isOpen, setisOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState('');
+  const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
-    }
+    };
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   const handleMenuItemClick = (sectionId) => {
     setActiveSection(sectionId);
-    setisOpen(false);
+    setIsOpen(false);
 
     const section = document.getElementById(sectionId);
     if (section) {
-      section.scrollIntoView({ behavior: "smooth" });
+      section.scrollIntoView({ behavior: 'smooth' });
     }
   };
+
   const menuItems = [
     { id: 'about', label: 'About' },
     { id: 'skills', label: 'Skills' },
@@ -32,81 +34,90 @@ function Navbar() {
     { id: 'work', label: 'Work' },
     { id: 'contact', label: 'Contact' }
   ];
+
   return (
-    <nav className={`bg-[#050414] fixed top-0 w-full z-50 transition duration-300 px-[7vw] lg:px-[20vw]
-   ${isScrolled ? "bg-[#050414] bg-opacity-50 backdrop-blur-md" : "bg - transparent"}`}>
-      <div className="text-white py-5 flex justify-around items-center">
-        <div className="text-lg font-semibold cursor-pointer">
-          <span className='text-[#8245ec]'>&lt;</span>
-          <span className='text-white'>Bhargav</span>
-          <span className='text-[#8245ec]'>/</span>
-          <span className='text-white'>Kotadiya</span>
-          <span className='text-[#8245ec]'>&gt;</span>
-        </div>
-        <ul className="hidden md:flex space-x-8 text-gray-300">
+    <nav className={`fixed top-0 w-full z-50 transition duration-300 px-4 sm:px-6 md:px-10 lg:px-[15vw] xl:px-[20vw] ${isScrolled ? 'bg-[#050414] bg-opacity-80 backdrop-blur-md' : 'bg-transparent'}`}>
+      <div className="flex items-center justify-between py-4 text-white">
+        {/* Logo */}
+        <motion.div
+          initial={{ opacity: 0, y: 60 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          viewport={{ once: true }}
+          className="text-base sm:text-lg font-semibold cursor-pointer whitespace-nowrap">
+          <span className="text-[#8245ec]">&lt;</span>
+          <span>Bhargav</span>
+          <span className="text-[#8245ec]">/</span>
+          <span>Kotadiya</span>
+          <span className="text-[#8245ec]">&gt;</span>
+        </motion.div>
+
+        {/* Desktop Menu (visible at 768px and up) */}
+        <motion.ul
+          initial={{ opacity: 0, y: 60 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          viewport={{ once: true }}
+          className="hidden md:flex gap-4 lg:gap-8 text-sm lg:text-base text-gray-300">
           {menuItems.map((item) => (
-            <li key={item.id} href={item.id} className={`cursor-pointer hover:text-[#8245ec] ${activeSection === item.id ? 'text-[#8245ec]' : ''}`}>
+            <li key={item.id} className={`cursor-pointer hover:text-[#8245ec] ${activeSection === item.id ? 'text-[#8245ec]' : ''}`}>
               <button onClick={() => handleMenuItemClick(item.id)}>{item.label}</button>
             </li>
           ))}
-        </ul>
-        <div className="hidden md:flex space-x-4">
-          <a href="https://github.com/KOTADIYABHARGAV"
-            className="text-gray-300 hover:text-[#8245ec] transition duration-300"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <FaGithub className="text-2xl" />
-          </a>
-          <a href="https://www.linkedin.com/in/bhargav-kotadiya/"
-            className="text-gray-300 hover:text-[#8245ec] transition duration-300"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <FaLinkedin className="text-2xl" />
-          </a>
+        </motion.ul>
+
+        {/* Desktop Icons (visible at 768px and up) */}
+        <div className="hidden md:flex items-center gap-3">
+          <motion.a
+            initial={{ opacity: 0, y: 60 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            viewport={{ once: true }}
+            href="https://github.com/KOTADIYABHARGAV" target="_blank" rel="noopener noreferrer" className="hover:text-[#8245ec] text-gray-300">
+            <FaGithub size={20} />
+          </motion.a>
+          <motion.a
+            initial={{ opacity: 0, y: 60 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            viewport={{ once: true }}
+            href="https://www.linkedin.com/in/bhargav-kotadiya/" target="_blank" rel="noopener noreferrer" className="hover:text-[#8245ec] text-gray-300">
+            <FaLinkedin size={20} />
+          </motion.a>
         </div>
 
-
-        {/* Mobile menu icon */}
-        <div className="md:hidden transition duration-300">
+        {/* Mobile Menu Toggle (visible below 768px) */}
+        <div className="md:hidden">
           {isOpen ? (
-            <FiX className="text-2xl  text-[#8245ec] cursor-pointer" onClick={() => setisOpen(false)} />
+            <FiX className="text-2xl text-[#8245ec] cursor-pointer" onClick={() => setIsOpen(false)} />
           ) : (
-            <FiMenu className="text-2xl  text-[#8245ec] cursor-pointer" onClick={() => setisOpen(true)} />
+            <FiMenu className="text-2xl text-[#8245ec] cursor-pointer" onClick={() => setIsOpen(true)} />
           )}
         </div>
       </div>
 
-      {/* Mobile menuItems */}
+      {/* Mobile Menu Items */}
       {isOpen && (
-        <div className="absolute top-16 left-1/2 transform -translate-x-1/2 w-4/5 bg-[#050414] bg-opacity-50 backdrop-filter backdrop-blur-lg z-50 rounded-lg shadow-lg">
-          <ul className="flex flex-col items-center space-y-4 py-4 text-gray-300">
+        <div className="md:hidden w-full bg-[#050414] bg-opacity-90 backdrop-blur-md rounded-b-lg shadow-lg">
+          <ul className="flex flex-col items-center space-y-4 py-4 text-gray-300 text-base">
             {menuItems.map((item) => (
               <li key={item.id} className={`cursor-pointer hover:text-[#8245ec] ${activeSection === item.id ? 'text-[#8245ec]' : ''}`}>
                 <button onClick={() => handleMenuItemClick(item.id)}>{item.label}</button>
               </li>
             ))}
-            <div className="flex space-x-4">
-              <a href="#"
-                className="text-gray-300 hover:text-white transition duration-300"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <FaGithub size={24} />
+            <div className="flex gap-4 pt-2">
+              <a href="https://github.com/KOTADIYABHARGAV" target="_blank" rel="noopener noreferrer" className="hover:text-white text-gray-300">
+                <FaGithub size={22} />
               </a>
-              <a href="#"
-                className="text-gray-300 hover:text-white transition duration-300"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <FaLinkedin size={24} />
+              <a href="https://www.linkedin.com/in/bhargav-kotadiya/" target="_blank" rel="noopener noreferrer" className="hover:text-white text-gray-300">
+                <FaLinkedin size={22} />
               </a>
             </div>
           </ul>
         </div>
       )}
     </nav>
-  )
+  );
 }
-export default Navbar; 
+
+export default Navbar;

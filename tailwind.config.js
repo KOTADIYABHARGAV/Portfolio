@@ -1,3 +1,5 @@
+import { BiGame } from 'react-icons/bi';
+
 /** @type {import('tailwindcss').Config} */
 export default {
   content: [
@@ -7,6 +9,9 @@ export default {
   theme: {
     extend: {
       keyframes: {
+        screen: {
+          'big': '1000px'
+        },
         blob: {
           '0%': { transform: 'scale(1)' },
           '33%': { transform: 'scale(1.2)' },

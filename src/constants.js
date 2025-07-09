@@ -8,8 +8,8 @@ import materialuiLogo from '../public/assets/materialui.png';
 import bootstrapLogo from '../public/assets/bootstrap.png';
 import nodejsLogo from '../public/assets/nodejs.png';
 import mysqlLogo from '../public/assets/mysql.png';
-import javaLogo from '../public/assets/java.png';
-import pythonLogo from '../public/assets/python.png';
+import photoshopLogo from '../public/assets/photoshop.png';
+import illustratorLogo from '../public/assets/Illustrator.png';
 import gitLogo from '../public/assets/git.png';
 import githubLogo from '../public/assets/github.png';
 import vscodeLogo from '../public/assets/vscode.png';
@@ -51,8 +51,6 @@ export const SkillsInfo = [
     {
         title: 'Languages',
         skills: [
-            { name: 'Java', logo: javaLogo },
-            { name: 'Python', logo: pythonLogo },
             { name: 'JavaScript', logo: javascriptLogo },
         ],
     },
@@ -63,6 +61,8 @@ export const SkillsInfo = [
             { name: 'GitHub', logo: githubLogo },
             { name: 'VS Code', logo: vscodeLogo },
             { name: 'Figma', logo: figmaLogo },
+            { name: 'Photoshop', logo: photoshopLogo },
+            { name: 'Illustrator', logo: illustratorLogo },
         ],
     },
 ];

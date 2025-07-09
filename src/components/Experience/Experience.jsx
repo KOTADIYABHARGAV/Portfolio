@@ -1,68 +1,94 @@
 import React from 'react'
 import { experiences } from '../../constants';
+import { motion } from 'framer-motion';
 
 function Experience() {
   return (
     <section
       id="experience"
-      className='bg-skills-gradient clip-path-custom-2 py-24 pb-24 px-[12vw] md:px-[7vw] lg:px-[20vw]'>
+      className='bg-skills-gradient clip-path-custom-2 py-24 px-[12vw] md:px-[7vw] lg:px-[20vw]'
+    >
       {/* section title */}
-      <div className="text-center mb-16">
+      <motion.div
+        initial={{ opacity: 0, y: 60 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+        viewport={{ once: true }}
+        className="text-center mb-16">
         <h2 className='text-4xl font-bold text-white'>EXPERIENCE</h2>
         <div className="w-32 h-1 bg-purple-500 mx-auto mt-4"></div>
-        <p className='text-gray-400 mt-4 text-lg font-semibold'>A collection of my work experience and roles i have taken in various organization.</p>
-      </div>
-      {/* experience timeline */}
+        <p className='text-gray-400 mt-4 text-lg font-semibold'>
+          A collection of my work experience and roles I have taken in various organizations.
+        </p>
+      </motion.div>
+
+      {/* timeline container */}
       <div className="relative">
-        {/* Verticle line */}
-        <div className="absolute sm:left-1/2 left-0 transform -translate-x-1/2 sm:-translate-x-0 w-1 bg-white h-full"></div>
-        {/* Experience Entries */}
+        {/* vertical line for desktop */}
+        <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-1 bg-white h-full"></div>
+
+        {/* experience cards */}
         {experiences.map((experience, index) => (
-          <div
+          <motion.div
+            initial={{ opacity: 0, y: 60 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+            viewport={{ once: true }}
             key={experience.id}
-            className={`flex flex-col sm:flex-row items-center mb-16 ${index % 2 === 0 ? "sm:justify-end" : "sm:justify-start"}`}
+            className={`
+              flex flex-col md:flex-row items-center mb-16
+              ${index % 2 === 0 ? 'md:justify-end' : 'md:justify-start'}
+            `}
           >
-            {/* Timeline circle */}
-            <div className='absolute sm:left-1/2 left-0 transform -translate-x-1/2 bg-gray-400 border-4 border-[#8245ec] w-12 h-12 sm:w-16 sm:h-16 rounded-full flex justify-center z-10'>
+            {/* timeline dot */}
+            <div className='absolute md:left-1/2 left-[2rem] md:transform -translate-x-1/2 bg-gray-400 border-4 border-[#8245ec] w-10 h-10 md:w-16 md:h-16 rounded-full flex items-center justify-center z-10'>
               <img src={experience.img} alt={experience.company} className='rounded-full object-cover w-full h-full' />
             </div>
-            {/* Content Section */}
-            <div className={`w-full sm:max-w-md p-4 sm:p-8 rounded-2xl border border-white bg-gray-900 backdrop-blur-md shadow-[0_0_20px_1px_rgba(130,69,230,0.3)]
-            ${index % 2 === 0 ? "sm:ml-0" : "sm:mr-0"} sm:ml-44 ml-8 transform transition-transform duration-300 hover:scale-105`}>
 
-              {/* Flex Container and image*/}
+            {/* experience card */}
+            <div className={`
+              w-full md:max-w-md p-4 md:p-8 mt-12 md:mt-0
+              rounded-2xl border border-white bg-gray-900 backdrop-blur-md 
+              shadow-[0_0_20px_1px_rgba(130,69,230,0.3)] 
+              transform transition-transform duration-300 hover:scale-105
+              ${index % 2 === 0 ? 'md:ml-[32rem]' : 'md:mr-[32rem]'}
+              ml-8 md:ml-0 md:mr-0
+            `}>
+              {/* top row: image and role info */}
               <div className='flex items-center space-x-6'>
-                {/* Company logo  */}
                 <div className="w-16 h-16 bg-white rounded-md overflow-hidden">
                   <img className='w-full h-full object-cover' src={experience.img} alt={experience.company} />
                 </div>
-                {/* Comapany role position date */}
                 <div className="flex flex-col justify-between">
                   <div>
-                    <h3 className='text-xl sm:text-2xl font-semibold text-white'>{experience.role}</h3>
-                    <h4 className='text-md sm:text-sm text-gray-300'>{experience.company}</h4>
+                    <h3 className='text-xl md:text-2xl font-semibold text-white'>{experience.role}</h3>
+                    <h4 className='text-md md:text-sm text-gray-300'>{experience.company}</h4>
                   </div>
-                  {/* Date */}
                   <p className='text-sm text-gray-500 mt-2'>{experience.date}</p>
                   <p className='text-sm text-gray-500 mt-2'>{experience.time}</p>
                 </div>
               </div>
+
+              {/* description */}
               <p className='text-gray-400 mt-4'>{experience.desc}</p>
+
+              {/* skills */}
               <div className="mt-4">
                 <h5 className='font-medium text-white'>Skills:</h5>
                 <ul className='flex flex-wrap mt-2'>
-                  {experience.skills.map((skill, index) => (
-                    <li key={index} className='bg-[#8245ec] text-gray-300 px-4 py-1 text-xs sm:text-sm rounded-lg mr-2 mb-2 border border-gray-400'>
+                  {experience.skills.map((skill, idx) => (
+                    <li key={idx} className='bg-[#8245ec] text-gray-300 px-4 py-1 text-xs md:text-sm rounded-lg mr-2 mb-2 border border-gray-400'>
                       {skill}
                     </li>
                   ))}
                 </ul>
               </div>
             </div>
-          </div>
+          </motion.div>
         ))}
       </div>
-    </section >
+    </section>
   )
 }
+
 export default Experience;
