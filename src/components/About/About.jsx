@@ -64,12 +64,12 @@ function About() {
           viewport={{ once: true }}
           className='md:w-1/2 w-full flex justify-center mb-8 md:mb-0'>
           <Tilt
-              className='w-120 h-120 md:w-150 md:h-150 rounded-full flex items-center justify-center'
-              tiltMaxAngleX={20}
-              tiltMaxAngleY={20}
-              perspective={1000}
-              scale={1.1}
-              transitionSpeed={600}
+            className='w-120 h-120 md:w-150 md:h-150 rounded-full flex items-center justify-center'
+            tiltMaxAngleX={20}
+            tiltMaxAngleY={20}
+            perspective={1000}
+            scale={1.1}
+            transitionSpeed={600}
           >
             <img
               src='/assets/Profile-pic.png'
