@@ -74,7 +74,7 @@ function About() {
             <img
               src='/assets/Profile-pic.png'
               alt='Profile'
-              className='w-96 h-96 rounded-full border-4 border-[#8245ec] shadow-lg object-cover hover:drop-shadow-[0_10px_20px_rgba(0,0,0,0.2)] transition hover:scale-105'
+              className='w-96 h-96 rounded-full border-4 border-[#a88dd7a5] hover:border-0 shadow-lg object-cover hover:drop-shadow-[0_10px_20px_rgba(0,0,0,0.2)] transition hover:scale-105'
             />
           </Tilt>
         </motion.div>

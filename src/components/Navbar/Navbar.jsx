@@ -7,6 +7,7 @@ function Navbar() {
   const [activeSection, setActiveSection] = useState('');
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isJumping, setIsJumping] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -35,6 +36,10 @@ function Navbar() {
     { id: 'contact', label: 'Contact' }
   ];
 
+  const handleJump = () => {
+    setIsJumping(true);
+    setTimeout(() => setIsJumping(false), 500); // Reset after 0.5 seconds
+  };
   return (
     <nav className={`fixed top-0 w-full z-50 transition backdrop-blur-md duration-300 px-4 sm:px-6 md:px-10 lg:px-[15vw] xl:px-[20vw] ${isScrolled ? 'bg-[#050414] bg-opacity-80 backdrop-blur-xl' : 'bg-transparent'}`}>
       <div className="flex items-center justify-between py-4 text-white">
@@ -42,8 +47,10 @@ function Navbar() {
         <motion.div
           initial={{ opacity: 0, y: 60 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
           viewport={{ once: true }}
+          onClick={handleJump}
+          animate={{ y: isJumping ? -50 : 0 }} // Move up by 50px when jumping
+          transition={{ duration: 0.5, type: "spring", stiffness: 100, damping: 10 }} // Spring physics for a natural bounce
           className="text-base sm:text-lg font-semibold cursor-pointer whitespace-nowrap">
           <span className="text-[#8245ec]">&lt;</span>
           <span>Bhargav</span>
@@ -53,34 +60,38 @@ function Navbar() {
         </motion.div>
 
         {/* Desktop Menu (visible at 768px and up) */}
-        <motion.ul
-          initial={{ opacity: 0, y: 60 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          viewport={{ once: true }}
-          className="hidden md:flex gap-4 lg:gap-8 text-sm lg:text-base text-gray-300">
+        <ul className="hidden md:flex gap-4 lg:gap-8 text-sm lg:text-base text-gray-300">
           {menuItems.map((item) => (
-            <li key={item.id} className={`cursor-pointer hover:text-[#8245ec] ${activeSection === item.id ? 'text-[#8245ec]' : ''}`}>
-              <button onClick={() => handleMenuItemClick(item.id)}>{item.label}</button>
+            <li
+              key={item.id} className={`cursor-pointer hover:text-[#8245ec] ${activeSection === item.id ? 'text-[#8245ec]' : ''}`}>
+              <motion.button
+                initial={{ opacity: 0, y: 60 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                animate={{ y: isJumping ? -50 : 0 }} // Move up by 50px when jumping
+                transition={{ duration: 0.5, type: "spring", stiffness: 100, damping: 10 }} // Spring physics for a natural bounce 
+                onClick={() => handleMenuItemClick(item.id)}>{item.label}</motion.button>
             </li>
           ))}
-        </motion.ul>
+        </ul>
 
         {/* Desktop Icons (visible at 768px and up) */}
         <div className="hidden md:flex items-center gap-3">
           <motion.a
             initial={{ opacity: 0, y: 60 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
             viewport={{ once: true }}
+            animate={{ y: isJumping ? -50 : 0 }} // Move up by 50px when jumping
+            transition={{ duration: 0.5, type: "spring", stiffness: 100, damping: 10 }} // Spring physics for a natural bounce
             href="https://github.com/KOTADIYABHARGAV" target="_blank" rel="noopener noreferrer" className="hover:text-[#8245ec] text-gray-300">
             <FaGithub size={20} />
           </motion.a>
           <motion.a
             initial={{ opacity: 0, y: 60 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
             viewport={{ once: true }}
+            animate={{ y: isJumping ? -50 : 0 }} // Move up by 50px when jumping
+            transition={{ duration: 0.5, type: "spring", stiffness: 100, damping: 10 }} // Spring physics for a natural bounce
             href="https://www.linkedin.com/in/bhargav-kotadiya/" target="_blank" rel="noopener noreferrer" className="hover:text-[#8245ec] text-gray-300">
             <FaLinkedin size={20} />
           </motion.a>
