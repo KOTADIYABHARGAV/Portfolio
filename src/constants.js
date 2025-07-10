@@ -9,7 +9,7 @@ import bootstrapLogo from '../public/assets/bootstrap.png';
 import nodejsLogo from '../public/assets/nodejs.png';
 import mysqlLogo from '../public/assets/mysql.png';
 import photoshopLogo from '../public/assets/photoshop.png';
-import illustratorLogo from '../public/assets/Illustrator.png';
+import illustratorLogo from '../public/assets/illustrator.png';
 import gitLogo from '../public/assets/git.png';
 import githubLogo from '../public/assets/github.png';
 import vscodeLogo from '../public/assets/vscode.png';
