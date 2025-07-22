@@ -114,9 +114,9 @@ function Contact() {
         transition={{ duration: 0.8 }}
         viewport={{ once: true }}
       >
-        <h2 className="text-4xl font-bold text-white">CONTACT</h2>
+        <h2 className="text-4xl font-bold text-gray-700 dark:text-gray-300">CONTACT</h2>
         <div className="w-32 h-1 bg-purple-500 mx-auto mt-4"></div>
-        <p className="text-gray-400 mt-4 text-lg font-semibold">Any Query - Contact me!</p>
+        <p className="text-gray-700 dark:text-gray-300 mt-4 text-lg font-semibold">Any Query - Contact me!</p>
       </motion.div>
 
       <motion.div
@@ -124,9 +124,9 @@ function Contact() {
         whileInView={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.6 }}
         viewport={{ once: true }}
-        className="w-full max-w-md bg-[#0d081f] p-6 rounded-lg shadow-lg border border-gray-700"
+        className="w-full max-w-md bg- dark:bg-[#0d081f] p-6 rounded-lg shadow-lg border border-gray-700"
       >
-        <h3 className="text-2xl sm:text-3xl font-semibold text-white text-center">Connect with me</h3>
+        <h3 className="text-2xl sm:text-3xl font-semibold text-gray-700 dark:text-gray-300 text-center">Connect with me</h3>
 
         {isSent ? (
           <motion.div
@@ -148,7 +148,7 @@ function Contact() {
                 onChange={handleChange}
                 onBlur={handleBlur}
                 placeholder="Your Email"
-                className="w-full p-3 rounded-md bg-[#131025] text-white border border-gray-600 focus:outline-none focus:border-purple-500 focus:shadow-lg transition-all"
+                className="w-full p-3 rounded-md bg-white dark:bg-[#131025] text-gray-700 dark:text-gray-300 border border-gray-600 focus:outline-none focus:border-purple-500 focus:shadow-lg transition-all"
               />
               {errors.user_email && <p className="text-red-400 text-sm">{errors.user_email}</p>}
             </div>
@@ -162,7 +162,7 @@ function Contact() {
                 onChange={handleChange}
                 onBlur={handleBlur}
                 placeholder="Your Name"
-                className="w-full p-3 rounded-md bg-[#131025] text-white border border-gray-600 focus:outline-none focus:border-purple-500 focus:shadow-lg transition-all"
+                className="w-full p-3 rounded-md bg-white dark:bg-[#131025] text-gray-700 dark:text-gray-300 border border-gray-600 focus:outline-none focus:border-purple-500 focus:shadow-lg transition-all"
               />
               {errors.user_name && <p className="text-red-400 text-sm">{errors.user_name}</p>}
             </div>
@@ -176,7 +176,7 @@ function Contact() {
                 onChange={handleChange}
                 onBlur={handleBlur}
                 placeholder="Subject"
-                className="w-full p-3 rounded-md bg-[#131025] text-white border border-gray-600 focus:outline-none focus:border-purple-500 focus:shadow-lg transition-all"
+                className="w-full p-3 rounded-md bg-white dark:bg-[#131025] text-gray-700 dark:text-gray-300 border border-gray-600 focus:outline-none focus:border-purple-500 focus:shadow-lg transition-all"
               />
               {errors.subject && <p className="text-red-400 text-sm">{errors.subject}</p>}
             </div>
@@ -190,7 +190,7 @@ function Contact() {
                 onBlur={handleBlur}
                 placeholder="Message"
                 rows={4}
-                className="w-full p-3 rounded-md bg-[#131025] text-white border border-gray-600 focus:outline-none focus:border-purple-500 focus:shadow-lg transition-all"
+                className="w-full p-3 rounded-md bg-white dark:bg-[#131025] text-gray-700 dark:text-gray-300 border border-gray-600 focus:outline-none focus:border-purple-500 focus:shadow-lg transition-all"
               />
               {errors.message && <p className="text-red-400 text-sm">{errors.message}</p>}
             </div>

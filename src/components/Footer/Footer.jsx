@@ -35,7 +35,7 @@ function Footer() {
             <button
               key={index}
               onClick={() => handleScroll(item.id)}
-              className='hover:text-purple-500 text-sm sm:text-base px-2 py-1'
+              className='hover:text-purple-500 dark:hover:text-purple-500 text-gray-700 dark:text-gray-300 text-sm sm:text-base px-2 py-1'
             >
               {item.name}
             </button>
@@ -56,14 +56,14 @@ function Footer() {
               href={item.link}
               target='_blank'
               rel='noopener noreferrer'
-              className='text-xl hover:text-purple-500 transition-transform transform hover:scale-110'>
+              className='text-xl text-gray-700 dark:text-gray-300 dark:hover:text-purple-500 hover:text-purple-500 transition-transform transform hover:scale-110'>
               {item.icon}
             </a>
           ))}
         </div>
 
         {/* Copyright */}
-        <p className='text-sm text-gray-400 mt-6'>
+        <p className='text-sm text-gray-700 dark:text-gray-400 mt-6'>
           &#169; Copyright reserved by b_kotadiya_
         </p>
       </div>

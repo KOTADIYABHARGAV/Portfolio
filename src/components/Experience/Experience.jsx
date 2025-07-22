@@ -15,9 +15,9 @@ function Experience() {
         transition={{ duration: 0.8 }}
         viewport={{ once: true }}
         className="text-center mb-16">
-        <h2 className='text-4xl font-bold text-white'>EXPERIENCE</h2>
+        <h2 className='text-4xl font-bold text-gray-700 dark:text-gray-300'>EXPERIENCE</h2>
         <div className="w-32 h-1 bg-purple-500 mx-auto mt-4"></div>
-        <p className='text-gray-400 mt-4 text-lg font-semibold'>
+        <p className='text-gray-700 dark:text-gray-300 mt-4 text-lg font-semibold'>
           A collection of my work experience and roles I have taken in various organizations.
         </p>
       </motion.div>
@@ -25,7 +25,7 @@ function Experience() {
       {/* timeline container */}
       <div className="relative">
         {/* vertical line for desktop */}
-        <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-1 bg-white h-full"></div>
+        <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-1 bg-gray-900 dark:bg-white h-full"></div>
 
         {/* experience cards */}
         {experiences.map((experience, index) => (
@@ -41,14 +41,14 @@ function Experience() {
             `}
           >
             {/* timeline dot */}
-            <div className='absolute md:left-1/2 left-[2rem] md:transform -translate-x-1/2 bg-gray-400 border-4 border-[#8245ec] w-10 h-10 md:w-16 md:h-16 rounded-full flex items-center justify-center z-10'>
+            <div className='absolute md:left-1/2 left-[2rem] md:transform -translate-x-1/2 border-4 border-gray-900 dark:border-white  w-10 h-10 md:w-16 md:h-16 rounded-full flex items-center justify-center z-10'>
               <img src={experience.img} alt={experience.company} className='rounded-full object-cover w-full h-full' />
             </div>
 
             {/* experience card */}
             <div className={`
               w-full md:max-w-md p-4 md:p-8 mt-12 md:mt-0
-              rounded-2xl border border-white bg-gray-900 backdrop-blur-md 
+              rounded-2xl border border-white bg-white dark:bg-gray-900 backdrop-blur-md 
               shadow-[0_0_20px_1px_rgba(130,69,230,0.3)] 
               transform transition-transform duration-300 hover:scale-105
               ${index % 2 === 0 ? 'md:ml-[32rem]' : 'md:mr-[32rem]'}
@@ -61,23 +61,23 @@ function Experience() {
                 </div>
                 <div className="flex flex-col justify-between">
                   <div>
-                    <h3 className='text-xl md:text-2xl font-semibold text-white'>{experience.role}</h3>
-                    <h4 className='text-md md:text-sm text-gray-300'>{experience.company}</h4>
+                    <h3 className='text-xl md:text-2xl font-semibold text-gray-700 dark:text-gray-300'>{experience.role}</h3>
+                    <h4 className='text-md md:text-sm text-gray-700 dark:text-gray-300'>{experience.company}</h4>
                   </div>
-                  <p className='text-sm text-gray-500 mt-2'>{experience.date}</p>
-                  <p className='text-sm text-gray-500 mt-2'>{experience.time}</p>
+                  <p className='text-sm text-gray-700 dark:text-gray-300 mt-2'>{experience.date}</p>
+                  <p className='text-sm text-gray-700 dark:text-gray-300 mt-2'>{experience.time}</p>
                 </div>
               </div>
 
               {/* description */}
-              <p className='text-gray-400 mt-4'>{experience.desc}</p>
+              <p className='text-gray-700 dark:text-gray-300 mt-4'>{experience.desc}</p>
 
               {/* skills */}
               <div className="mt-4">
                 <h5 className='font-medium text-white'>Skills:</h5>
                 <ul className='flex flex-wrap mt-2'>
                   {experience.skills.map((skill, idx) => (
-                    <li key={idx} className='bg-[#8245ec] text-gray-300 px-4 py-1 text-xs md:text-sm rounded-lg mr-2 mb-2 border border-gray-400'>
+                    <li key={idx} className='bg-[#7729ff] dark:bg-[#8245ec] text-gray-300 px-4 py-1 text-xs md:text-sm rounded-lg mr-2 mb-2 border dark:border-gray-400 border-gray-950'>
                       {skill}
                     </li>
                   ))}

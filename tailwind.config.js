@@ -2,6 +2,7 @@ import { BiGame } from 'react-icons/bi';
 
 /** @type {import('tailwindcss').Config} */
 export default {
+  darkMode: 'class', // <-- this enables manual dark mode via class
   content: [
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",

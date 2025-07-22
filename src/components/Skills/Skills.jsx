@@ -16,9 +16,9 @@ function Skills() {
         transition={{ duration: 0.8 }}
         viewport={{ once: true }}
       >
-        <h2 className='text-2xl sm:text-4xl font-bold text-white'>SKILLS</h2>
+        <h2 className='text-2xl sm:text-4xl font-bold  text-gray-700 dark:text-gray-300'>SKILLS</h2>
         <div className="w-24 h-1 bg-[#8245ec] mx-auto mt-2"></div>
-        <p className="text-sm sm:text-base md:text-lg text-gray-400 mt-4 font-semibold">
+        <p className="text-sm sm:text-base md:text-lg  text-gray-700 dark:text-gray-300 mt-4 font-semibold">
           A collection of my technical skills and expertise honed through projects and experience.
         </p>
       </motion.div>
@@ -28,9 +28,9 @@ function Skills() {
         {SkillsInfo.map((category) => (
           <div
             key={category.title}
-            className="bg-gray-900 backdrop-blur-md px-6 py-6 sm:px-8 sm:py-8 rounded-2xl border border-white shadow-[0_0_20px_1px_rgba(130,69,236,0.3)] w-full sm:w-[48%] md:w-[47%] lg:w-[45%] xl:w-[40%] max-w-[500px]"
+            className="bg-gray-50 dark:bg-gray-900 backdrop-blur-md px-6 py-6 sm:px-8 sm:py-8 rounded-2xl border border-gray-700 dark:border-gray-300 shadow-[0_0_20px_1px_rgba(130,69,236,0.3)] w-full sm:w-[48%] md:w-[47%] lg:w-[45%] xl:w-[40%] max-w-[500px]"
           >
-            <h3 className='text-xl sm:text-2xl font-semibold text-gray-400 mb-4 text-center'>
+            <h3 className='text-xl sm:text-2xl font-semibold  text-gray-700 dark:text-gray-300 mb-4 text-center'>
               {category.title}
             </h3>
             <Tilt
@@ -57,7 +57,7 @@ function Skills() {
                       alt={`${skill.name} Logo`}
                       className='w-5 h-5 sm:w-7 sm:h-7 object-contain'
                     />
-                    <span className='text-xs sm:text-sm text-gray-300'>{skill.name}</span>
+                    <span className='text-xs sm:text-sm  text-gray-900 dark:text-gray-300'>{skill.name}</span>
                   </div>
                 ))}
               </motion.div>
