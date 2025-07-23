@@ -25,7 +25,7 @@ function Experience() {
       {/* timeline container */}
       <div className="relative">
         {/* vertical line for desktop */}
-        <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-1 bg-gray-900 dark:bg-white h-full"></div>
+        <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-1 shadow-sm shadow-gray-700 dark:shadow-gray-50 h-full"></div>
 
         {/* experience cards */}
         {experiences.map((experience, index) => (
@@ -41,7 +41,7 @@ function Experience() {
             `}
           >
             {/* timeline dot */}
-            <div className='absolute md:left-1/2 left-[2rem] md:transform -translate-x-1/2 border-4 border-gray-900 dark:border-white  w-10 h-10 md:w-16 md:h-16 rounded-full flex items-center justify-center z-10'>
+            <div className='absolute md:left-1/2 left-[2rem] md:transform -translate-x-1/2 shadow-sm shadow-gray-700 dark:shadow-gray-50 w-10 h-10 md:w-16 md:h-16 rounded-full flex items-center justify-center z-10'>
               <img src={experience.img} alt={experience.company} className='rounded-full object-cover w-full h-full' />
             </div>
 

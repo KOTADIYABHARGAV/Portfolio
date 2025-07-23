@@ -13,7 +13,7 @@ function Work() {
   };
 
   return (
-    <section id='work' className='py-24 px-6 sm:px-8 md:px-12 lg:px-[12vw] font-sans relative'>
+    <section id='work' className='bg-skills-gradient clip-path-custom-3 py-24 px-6 sm:px-8 md:px-12 lg:px-[12vw] font-sans relative'>
       {/* Section title */}
       <motion.div
         initial={{ opacity: 0, y: 60 }}

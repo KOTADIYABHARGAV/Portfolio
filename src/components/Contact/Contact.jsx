@@ -105,7 +105,7 @@ function Contact() {
   return (
     <section
       id="contact"
-      className="flex flex-col items-center justify-center py-24 px-6 sm:px-8 md:px-12 lg:px-[12vw]"
+      className="clip-path-custom-4 flex flex-col items-center justify-center py-24 px-6 sm:px-8 md:px-12 lg:px-[12vw]"
     >
       <ToastContainer />
       <motion.div className="text-center mb-16"

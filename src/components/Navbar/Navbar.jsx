@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import { FiMenu, FiX } from 'react-icons/fi';
 import { motion } from 'framer-motion';
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
-import ThemeToggle from '../ThemeToggle';
 
 function Navbar() {
   const [activeSection, setActiveSection] = useState('');
@@ -100,7 +99,6 @@ function Navbar() {
             <FaLinkedin size={20} />
           </motion.a>
         </div>
-        <ThemeToggle />
 
         {/* Mobile Menu Toggle (visible below 768px) */}
         <div className="md:hidden">
@@ -115,23 +113,23 @@ function Navbar() {
       {/* Mobile Menu Items */}
       {
         isOpen && (
-          <div className="md:hidden w-full bg-[#050414] bg-opacity-90 backdrop-blur-md rounded-b-lg shadow-lg">
-            <ul className="flex flex-col items-center space-y-4 py-4 text-gray-300 text-base">
+          <div className="md:hidden w-full dark:bg-[#050414] bg-opacity-90 backdrop-blur-md rounded-b-lg shadow-lg">
+            <ul className="flex flex-col items-center space-y-4 py-4 dark:text-gray-300 text-base">
               {menuItems.map((item) => (
                 <li key={item.id} className={`cursor-pointer hover:text-[#8245ec] ${activeSection === item.id ? 'text-[#8245ec]' : ''}`}>
                   <button onClick={() => handleMenuItemClick(item.id)}>{item.label}</button>
                 </li>
               ))}
               <div className="flex space-x-4">
-                <a href="#"
-                  className="text-gray-300 hover:text-white transition duration-300"
+                <a href="https://github.com/KOTADIYABHARGAV"
+                  className="dark:text-gray-300 text-gray-300 dark:hover:text-white hover:text-gray-600 transition duration-300"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
                   <FaGithub size={24} />
                 </a>
-                <a href="#"
-                  className="text-gray-300 hover:text-white transition duration-300"
+                <a href="https://www.linkedin.com/in/bhargav-kotadiya/"
+                  className="dark:text-gray-300 text-gray-300 dark:hover:text-white hover:text-gray-600 transition duration-300"
                   target="_blank"
                   rel="noopener noreferrer"
                 >

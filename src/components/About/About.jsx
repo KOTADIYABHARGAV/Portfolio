@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import ReactTypingEffect from 'react-typing-effect';
 import Tilt from 'react-parallax-tilt';
+import resumepdf from '../../../public/Resume - Bhargav.pdf';
 
 function About() {
   return (
@@ -44,7 +45,7 @@ function About() {
             Frontend Developer specializing in building responsive and accessible websites using React and modern web technologies.
           </p>
           <a
-            href='#'                    
+            href={resumepdf}
             target='_blank'
             rel='noopener noreferrer'
             className='inline-block bg-[#8245ec] text-white px-6 py-3 mt-5 rounded-full shadow-lg hover:bg-[#6f37c1] transition duration-300 ease-in-out hover:scale-105'

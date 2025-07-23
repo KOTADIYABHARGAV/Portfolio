@@ -20,12 +20,13 @@ import webileLogo from '../public/assets/webile.png';
 
 // Education Section Logo's
 import msuLogo from '../public/assets/msu.png';
-import silverLogo from '../public/assets/silver.png';
-import ashadeepLogo from '../public/assets/ashadeep.png';
+import silverLogo from '../public/assets/silveoak.jpg';
+import ashadeepLogo from '../public/assets/ashadeep.jpg';
 import balanandLogo from '../public/assets/balanand.png';
 
 // Project Section Logo's
-
+import project2img from '../public/assets/project-2.png';
+import project3img from '../public/assets/project-3.png'
 
 
 export const SkillsInfo = [
@@ -135,6 +136,26 @@ export const projects = [
         // image: ,
         tags: ["HTML", "TailwindCss", "PHP", "Laravel", "API"],
         github: "https://github.com/Deep-chovatiya/only-stor",
+        webapp: "",
+    },
+    {
+        id: 1,
+        title: "React Login Page",
+        description:
+            "React Login page used of react component and use effect and use state.",
+        image: project3img,
+        tags: ["HTML", "CSS", "TypeScript"],
+        github: "https://github.com/KOTADIYABHARGAV/react-login-page.git",
+        webapp: "",
+    },
+    {
+        id: 2,
+        title: "Sign-Up/In WebApp",
+        description:
+            "These Web app have only HTML and CSS or in these use css animation to make UI different.",
+        image: project2img,
+        tags: ["HTML", "CSS"],
+        github: "https://github.com/KOTADIYABHARGAV/Sign_up-sign_in.git",
         webapp: "",
     },
 ];  

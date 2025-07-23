@@ -25,7 +25,7 @@ function Education() {
       {/* Timeline Container */}
       <div className="relative">
         {/* Vertical Line for Tablet and Up */}
-        <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-1 bg-gray-900 dark:bg-white h-full"></div>
+        <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-1 shadow-sm shadow-gray-800 dark:shadow-gray-50 h-full"></div>
 
         {/* Timeline Entries */}
         {education.map((edu, index) => (
@@ -35,19 +35,20 @@ function Education() {
             transition={{ duration: 0.5, delay: 0.1 }}
             viewport={{ once: true }}
             key={edu.id}
-            className={`relative flex flex-col md:flex-row items-center mb-28 
-              ${index % 2 === 0 ? 'md:justify-start' : 'md:justify-end'}
+            className={`
+              flex flex-col md:flex-row items-center mb-16
+              ${index % 2 === 0 ? 'md:justify-end' : 'md:justify-start'}
             `}
           >
             {/* Timeline Dot */}
             <div className="hidden md:flex absolute left-1/2 transform -translate-x-1/2 
-              bg-gray-900 border-4 dark:border-white border-gray-100 w-16 h-16 rounded-full z-20 overflow-hidden shadow-lg items-center justify-center">
+              dark:border-white shadow-sm shadow-gray-700 dark:shadow-gray-50 w-16 h-16 rounded-full z-20 overflow-hidden items-center justify-center">
               <img src={edu.img} alt={edu.school} className="w-full h-full object-cover rounded-full" />
             </div>
 
             {/* Mobile Dot (Left Aligned) */}
             <div className="md:hidden absolute left-4 sm:left-6 top-0 
-              bg-gray-900 border-4 dark:border-white border-gray-100 w-12 h-12 rounded-full z-10 overflow-hidden shadow-lg">
+              bg-gray-900 border dark:border-white border-gray-100 w-12 h-12 rounded-full z-10 overflow-hidden shadow-lg">
               <img src={edu.img} alt={edu.school} className="w-full h-full object-cover rounded-full" />
             </div>
 
@@ -60,7 +61,7 @@ function Education() {
 
               {/* Education Card */}
               <div className="w-full max-w-[95%] sm:max-w-[85%] md:max-w-[550px]
-               bg-white dark:bg-gray-900 border-4 border-white p-6 pt-8 rounded-2xl 
+               bg-white dark:bg-gray-900 border border-white p-6 pt-8 rounded-2xl 
                 shadow-[0_0_20px_1px_rgba(130,69,230,0.3)] backdrop-blur-md
                 transform transition-transform duration-300 hover:scale-105
                 mt-20 sm:mt-16 md:mt-14 min-h-[260px]
