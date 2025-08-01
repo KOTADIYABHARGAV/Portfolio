@@ -7,20 +7,23 @@ function Work() {
 
   const handleOpenModal = (project) => {
     setSelectedProject(project);
+    document.body.style.overflow = "hidden"; // Lock scrolling
   };
+
   const handalCloseModal = () => {
     setSelectedProject(null);
+    document.body.style.overflow = "auto"; // Unlock scrolling
   };
 
   return (
-    <section id='work' className='bg-skills-gradient clip-path-custom-3 py-24 px-6 sm:px-8 md:px-12 lg:px-[12vw] font-sans relative'>
+    <section id='work' className='bg-skills-gradient py-24 px-6 sm:px-8 md:px-12 lg:px-[12vw] font-sans relative'>
       {/* Section title */}
       <motion.div
         initial={{ opacity: 0, y: 60 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.1 }}
         viewport={{ once: true }}
-        className='text-center mb-16'>
+        className='text-center mb-16 clip-path-custom-3'>
         <h2 className='text-4xl font-bold text-gray-700 dark:text-gray-300'>Project's</h2>
         <div className="w-32 h-1 bg-purple-500 mx-auto mt-4"></div>
         <p className='font-semibold text-gray-700 dark:text-gray-300 text-lg mt-4'>
@@ -65,7 +68,7 @@ function Work() {
       {/* Modal container */}
       {selectedProject && (
         <div
-          className='fixed inset-0 z-50 flex items-center justify-center bg-white dark:bg-black dark:bg-opacity-80 bg-opacity-80 p-4'>
+          className='fixed inset-0 flex items-center justify-center bg-white dark:bg-black dark:bg-opacity-80 bg-opacity-80 p-4 z-50'>
           <div className='bg-white dark:bg-gray-900 rounded-xl shadow-[0_0_20px_1px_rgba(130,69,230,0.3)] w-full max-w-3xl backdrop-blur-md overflow-hidden relative'>
             <div className='flex justify-end p-4'>
               <button
