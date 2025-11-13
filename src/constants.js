@@ -93,7 +93,7 @@ export const education = [
         img: silverLogo,
         school: "Silver Oak University, Ahmedabad",
         date: "Aug 2023 - May 2025",
-        grade: "7.53 CGPA",
+        grade: "7.88 CGPA",
         desc: "I have completed my Master's degree (M.Sc.(IT)) in Science Information Technology from Silver Oak University, Ahmedabad. During my time at SOU, I gained a strong foundation in programming, software development, and computer science principles. I have studied courses such as Data Structures, Algorithms, Object-Oriented Programming, Database Management Systems, Web Development, and Software Engineering. I actively participated in various Seminar and technical events, which enhanced my skills and knowledge. My experience at SOU has been instrumental in shaping my technical abilities and professional growth.",
         degree: "Master of Science in Information Technology - M.Sc.IT",
     },
