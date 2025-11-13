@@ -72,7 +72,7 @@ export const experiences = [
     {
         id: 0,
         img: webileLogo,
-        role: "Php Developer",
+        role: "Intern",
         company: "Webile Technology PVT. LTD.",
         date: "Jan '25 - March '25",
         time: "3 Month's",
@@ -81,9 +81,8 @@ export const experiences = [
             "HTML",
             "CSS",
             "JavaScript",
-            "React JS",
-            "Node JS",
-            "Tailwind CSS",
+            "Php",
+            "Laravel",
         ],
     },
 ];
